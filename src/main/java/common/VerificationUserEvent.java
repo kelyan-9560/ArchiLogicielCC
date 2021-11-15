@@ -1,6 +1,6 @@
 package common;
 
-import common.User;
+
 import event.EventId;
 
 import java.util.Date;
