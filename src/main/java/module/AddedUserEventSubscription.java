@@ -1,8 +1,6 @@
 package module;
 
 import common.AddedUserEvent;
-import event.Subscriber;
-import module.SendMailToUser;
 
 import java.util.function.Consumer;
 

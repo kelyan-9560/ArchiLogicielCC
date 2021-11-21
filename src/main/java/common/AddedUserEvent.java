@@ -16,7 +16,7 @@ public class AddedUserEvent implements Event {
         this.user = user;
     }
 
-    public static AddedUserEvent addedUserEvent(User user){
+    public static AddedUserEvent withUser(User user){
         return new AddedUserEvent(EventId.create(), new Date(), user);
     }
 

@@ -14,8 +14,7 @@ public class AddedService {
 
     public void register(User user) {
         System.out.println("Ajout de :  " + user);
-        eventBus.send(AddedUserEvent.addedUserEvent(user));
+        eventBus.send(AddedUserEvent.withUser(user));
     }
-
 
 }

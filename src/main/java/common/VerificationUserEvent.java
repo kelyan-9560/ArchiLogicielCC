@@ -16,4 +16,8 @@ public class VerificationUserEvent {
         this.user = user;
     }
 
+    public static VerificationUserEvent withUser(User user){
+        return new VerificationUserEvent(EventId.create(), new Date(), user);
+    }
+
 }

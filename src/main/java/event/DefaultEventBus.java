@@ -1,11 +1,13 @@
 package event;
 
+import common.VerificationUserEvent;
+
 import java.util.List;
 import java.util.Map;
 
 public class DefaultEventBus<E extends Event> implements EventBus<E> {
 
-    private final Map<Class<E>, List<Subscriber<E>>> subscribers;
+    private Map<Class<E>, List<Subscriber<E>>> subscribers;
 
     public DefaultEventBus(Map<Class<E>, List<Subscriber<E>>> subscribers) {
         this.subscribers = subscribers;
@@ -24,5 +26,14 @@ public class DefaultEventBus<E extends Event> implements EventBus<E> {
     @Override
     public void registerSubscriber(Class<E> classE, List<Subscriber<E>> givenSubscribers) {
         subscribers.putIfAbsent(classE, givenSubscribers);
+    }
+
+    @Override
+    public void userVerificationSubscriber(VerificationUserEvent verificationUserEvent) {
+    }
+
+    @Override
+    public void creditCardVerificationSubscriber(VerificationUserEvent verificationUserEvent) {
+
     }
 }
