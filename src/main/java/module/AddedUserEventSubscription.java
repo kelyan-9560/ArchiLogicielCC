@@ -5,10 +5,13 @@ import common.AddedUserEvent;
 import java.util.function.Consumer;
 
 public class AddedUserEventSubscription implements Consumer<AddedUserEvent> {
-    private final SendMailToUser sendMailToUser;
 
-    public AddedUserEventSubscription(SendMailToUser sendMailToUser) {
+    private final SendMailToUser sendMailToUser;
+    private final Payment payement;
+
+    public AddedUserEventSubscription(SendMailToUser sendMailToUser, Payment payement) {
         this.sendMailToUser = sendMailToUser;
+        this.payement = payement;
     }
 
 
@@ -16,6 +19,7 @@ public class AddedUserEventSubscription implements Consumer<AddedUserEvent> {
     public void accept(AddedUserEvent event) {
         var user = event.getUser();
         sendMailToUser.sendMail(user);
+        payement.payement(user);
     }
 
 }

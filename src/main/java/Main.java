@@ -3,6 +3,7 @@ import common.CreditCard;
 import common.User;
 import event.DefaultEventBus;
 import module.AddedUserEventSubscription;
+import module.Payment;
 import module.SendMailToUser;
 import services.AddedService;
 import services.CreditCardVerificationService;
@@ -14,9 +15,8 @@ import java.util.Date;
 public class Main {
 
     public static void main(String[] args) throws Exception {
-        var subscriptionMap =
-                Collections.singletonMap(AddedUserEvent.class,
-                        Collections.singletonList(new AddedUserEventSubscription(new SendMailToUser())));
+        var subscriptionMap = Collections.singletonMap(AddedUserEvent.class,
+                        Collections.singletonList(new AddedUserEventSubscription(new SendMailToUser(), new Payment())));
 
         var eventBus = new DefaultEventBus(subscriptionMap);
 
@@ -37,6 +37,9 @@ public class Main {
         addedService.register(user);
 
         //paiement
+
+
+
 
     }
 }

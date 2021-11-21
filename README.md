@@ -1,10 +1,17 @@
 `CC1 Architecture logiciel | Kélyan BERVIN | ESGI 4ème Année`
 _________________________________________________
-Messaging Architecture
+Architecture used : _**Messaging**_
 _________________________________________________
+`# Program functionality`
 
+* User verifiaction 
+* Credit Card verification 
+* User registration 
+* Send mail to user 
+* Adding user 
+* Payment
 _________________________________________________
-## User(firstname, lastname, email, creditcard) :
+`## User(firstname, lastname, email, creditcard) :`
 
 - **Firstname :**
     - mustn't be null
@@ -13,7 +20,7 @@ _________________________________________________
 - **Email :**
   - must respect the regex
 
-##Credit Card (number, expiration date, owner name)
+`## Credit Card (number, expiration date, owner name)`
 
 - **Number :**
   - must have 18 digits

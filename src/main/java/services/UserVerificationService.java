@@ -5,6 +5,7 @@ import common.VerificationUserEvent;
 import event.Event;
 import event.EventBus;
 
+import javax.swing.plaf.synth.SynthTextAreaUI;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -25,6 +26,7 @@ public class UserVerificationService {
             eventBus.userVerificationSubscriber(VerificationUserEvent.withUser(user));
             return true;
         }
+        System.out.println("User : Adresse mail erronée");
         return false;
     }
 
@@ -35,6 +37,5 @@ public class UserVerificationService {
         }
         throw new Exception("Le user n'est pas valide");
     }
-
 
 }
