@@ -1,10 +1,10 @@
 package module;
 
-import common.User;
+import domain.tradesman.TradesMan;
 
 public class Payment {
 
-    public void payement (User user){
-        System.out.println("Paiment par " + user);
+    public void payement (TradesMan tradesMan){
+        System.out.println("Paiment par " + tradesMan);
     }
 }

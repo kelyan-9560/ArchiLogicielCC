@@ -1,6 +1,6 @@
 package module;
 
-import common.AddedUserEvent;
+import events.AddedUserEvent;
 
 import java.util.function.Consumer;
 

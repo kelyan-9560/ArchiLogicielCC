@@ -1,6 +1,4 @@
-package event;
-
-import common.VerificationUserEvent;
+package events;
 
 import java.util.List;
 import java.util.Map;

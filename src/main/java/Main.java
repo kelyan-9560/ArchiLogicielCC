@@ -1,13 +1,14 @@
-import common.AddedUserEvent;
-import common.CreditCard;
-import common.User;
-import event.DefaultEventBus;
+import events.AddedUserEvent;
+import domain.CreditCard;
+import domain.tradesman.TradesMan;
+import domain.tradesman.TradesManId;
+import events.DefaultEventBus;
 import module.AddedUserEventSubscription;
 import module.Payment;
 import module.SendMailToUser;
-import services.AddedService;
-import services.CreditCardVerificationService;
-import services.UserVerificationService;
+import application.AddedService;
+import application.CreditCardVerificationService;
+import application.UserVerificationService;
 
 import java.util.Collections;
 import java.util.Date;
@@ -27,14 +28,16 @@ public class Main {
 
 
         CreditCard creditCard = CreditCard.of("4587290539783546", "BERVIN", new Date());
-        User user = User.of("Kélyan ", "BERVIN", "kelyan.bervin@gmail.com", creditCard);
+        TradesManId tradesManId = TradesManId.of("1");
+        TradesMan tradesMan = TradesMan.of(tradesManId,"Kélyan ", "BERVIN", "kelyan.bervin@gmail.com",
+                creditCard, "Macon", "maçcon", 2.3);
 
-        creditCardVerificationService.creditCardVerification(creditCard, user);
+        creditCardVerificationService.creditCardVerification(creditCard, tradesMan);
 
 
-        userVerificationService.userVerification(user);
+        userVerificationService.userVerification(tradesMan);
 
-        addedService.register(user);
+        addedService.register(tradesMan);
 
         //paiement
 

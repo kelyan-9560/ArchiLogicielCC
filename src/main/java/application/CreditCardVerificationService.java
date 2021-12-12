@@ -1,9 +1,9 @@
-package services;
+package application;
 
-import common.CreditCard;
-import common.User;
-import event.Event;
-import event.EventBus;
+import domain.CreditCard;
+import domain.tradesman.TradesMan;
+import events.Event;
+import events.EventBus;
 
 import java.util.Date;
 import java.util.Objects;
@@ -32,16 +32,16 @@ public class CreditCardVerificationService {
         return false;
     }
 
-    public boolean ownerNameIsSameAsUserName(CreditCard creditCard, User user){
-        if(Objects.equals(creditCard.getOwnerName(), user.getLastname())){
+    public boolean ownerNameIsSameAsUserName(CreditCard creditCard, TradesMan tradesMan){
+        if(Objects.equals(creditCard.getOwnerName(), tradesMan.getLastname())){
             return true;
         }
         System.out.println("Carte de crédit : nom invalide");
         return false;
     }
 
-    public void creditCardVerification(CreditCard creditCard, User user) throws Exception {
-        if(numberIsValid(creditCard) && expirationDateIsValid(creditCard) && ownerNameIsSameAsUserName(creditCard, user)){
+    public void creditCardVerification(CreditCard creditCard, TradesMan tradesMan) throws Exception {
+        if(numberIsValid(creditCard) && expirationDateIsValid(creditCard) && ownerNameIsSameAsUserName(creditCard, tradesMan)){
             System.out.println("La carte de crédit est valide");
             return;
         }

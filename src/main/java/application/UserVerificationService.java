@@ -1,11 +1,9 @@
-package services;
+package application;
 
-import common.User;
-import common.VerificationUserEvent;
-import event.Event;
-import event.EventBus;
-
-import javax.swing.plaf.synth.SynthTextAreaUI;
+import domain.tradesman.TradesMan;
+import events.VerificationUserEvent;
+import events.Event;
+import events.EventBus;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -17,21 +15,21 @@ public class UserVerificationService {
         this.eventBus = eventBus;
     }
 
-    public boolean mailAddressVerification(User user) {
+    public boolean mailAddressVerification(TradesMan tradesMan) {
         String regex = "^(.+)@(.+)$";
         Pattern pattern = Pattern.compile(regex);
-        Matcher matcher = pattern.matcher(user.getEmail());
+        Matcher matcher = pattern.matcher(tradesMan.getEmail());
 
         if(matcher.matches()){
-            eventBus.userVerificationSubscriber(VerificationUserEvent.withUser(user));
+            eventBus.userVerificationSubscriber(VerificationUserEvent.withUser(tradesMan));
             return true;
         }
         System.out.println("User : Adresse mail erronée");
         return false;
     }
 
-    public void userVerification(User user) throws Exception {
-        if(mailAddressVerification(user)){
+    public void userVerification(TradesMan tradesMan) throws Exception {
+        if(mailAddressVerification(tradesMan)){
             System.out.println("Le user est valide");
             return;
         }

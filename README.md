@@ -7,8 +7,8 @@ _________________________________________________
 * User verifiaction 
 * Credit Card verification 
 * User registration 
-* Send mail to user 
-* Adding user 
+* Send mail to tradesMan 
+* Adding tradesMan 
 * Payment
 _________________________________________________
 `## User(firstname, lastname, email, creditcard) :`
@@ -31,6 +31,6 @@ _________________________________________________
   - mustn't be null
 
 - **Owner Name :** 
-  - must be the same as the user's
+  - must be the same as the tradesMan's
   - mustn't be null
 _______________________________________________

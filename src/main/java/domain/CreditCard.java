@@ -1,4 +1,4 @@
-package common;
+package domain;
 
 import java.util.Date;
 import java.util.Objects;

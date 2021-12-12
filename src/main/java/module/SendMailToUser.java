@@ -1,10 +1,10 @@
 package module;
 
-import common.User;
+import domain.tradesman.TradesMan;
 
 public class SendMailToUser {
 
-    public void sendMail (User user){
-        System.out.println("Mail envoyé à " + user);
+    public void sendMail (TradesMan tradesMan){
+        System.out.println("Mail envoyé à " + tradesMan);
     }
 }
