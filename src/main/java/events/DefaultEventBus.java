@@ -27,11 +27,12 @@ public class DefaultEventBus<E extends Event> implements EventBus<E> {
     }
 
     @Override
-    public void userVerificationSubscriber(VerificationUserEvent verificationUserEvent) {
+    public void tradesManVerificationSubscriber(VerificationTradesManEvent verificationUserEvent) {
+
     }
 
     @Override
-    public void creditCardVerificationSubscriber(VerificationUserEvent verificationUserEvent) {
+    public void creditCardVerificationSubscriber(VerificationTradesManEvent verificationUserEvent) {
 
     }
 }

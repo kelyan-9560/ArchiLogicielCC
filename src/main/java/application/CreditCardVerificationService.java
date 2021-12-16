@@ -1,6 +1,7 @@
 package application;
 
-import domain.CreditCard;
+import domain.tradesman.CreditCard;
+import domain.exception.CreditCardException;
 import domain.tradesman.TradesMan;
 import events.Event;
 import events.EventBus;
@@ -16,37 +17,29 @@ public class CreditCardVerificationService {
         this.eventBus = eventBus;
     }
 
-    public boolean numberIsValid(CreditCard creditCard){
+
+    public void numberIsValid(CreditCard creditCard) throws CreditCardException{
         if(creditCard.getNumber().length() != 18){
-            return true;
+            throw CreditCardException.withNumber(creditCard.getNumber());
         }
-        System.out.println("Carte de crédit : numéro invalide");
-        return false;
     }
 
-    public boolean expirationDateIsValid(CreditCard creditCard){
+    public void expirationDateIsValid(CreditCard creditCard) throws CreditCardException{
         if(creditCard.getExpirationDate().before(new Date())){
-            return true;
+            throw CreditCardException.withDate(creditCard.getExpirationDate());
         }
-        System.out.println("Carte de crédit : date d'expiration invalide");
-        return false;
     }
 
-    public boolean ownerNameIsSameAsUserName(CreditCard creditCard, TradesMan tradesMan){
-        if(Objects.equals(creditCard.getOwnerName(), tradesMan.getLastname())){
-            return true;
+    public void ownerNameIsSameAsUserName(CreditCard creditCard, TradesMan tradesMan) throws CreditCardException{
+        if(!Objects.equals(creditCard.getOwnerName(), tradesMan.getLastname())){
+            throw CreditCardException.withOwnerName(creditCard.getOwnerName());
         }
-        System.out.println("Carte de crédit : nom invalide");
-        return false;
     }
 
-    public void creditCardVerification(CreditCard creditCard, TradesMan tradesMan) throws Exception {
-        if(numberIsValid(creditCard) && expirationDateIsValid(creditCard) && ownerNameIsSameAsUserName(creditCard, tradesMan)){
-            System.out.println("La carte de crédit est valide");
-            return;
-        }
-        throw new Exception("Carte de crédit non valide");
+    public void creditCardVerification(CreditCard creditCard, TradesMan tradesMan) {
+        numberIsValid(creditCard);
+        //expirationDateIsValid(creditCard);
+        ownerNameIsSameAsUserName(creditCard, tradesMan);
     }
-
 
 }

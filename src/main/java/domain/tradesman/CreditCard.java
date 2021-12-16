@@ -1,4 +1,4 @@
-package domain;
+package domain.tradesman;
 
 import java.util.Date;
 import java.util.Objects;
@@ -22,6 +22,18 @@ public class CreditCard {
         return new CreditCard(number, ownerName, expirationDate);
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        CreditCard that = (CreditCard) o;
+        return Objects.equals(number, that.number) && Objects.equals(ownerName, that.ownerName) && Objects.equals(expirationDate, that.expirationDate);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(number, ownerName, expirationDate);
+    }
 
     public String getNumber() {
         return number;

@@ -7,6 +7,6 @@ public interface EventBus<E extends Event> {
 
     void registerSubscriber(Class<E> classE, List<Subscriber<E>> subscribers);
 
-    void userVerificationSubscriber(VerificationUserEvent verificationUserEvent);
-    void creditCardVerificationSubscriber(VerificationUserEvent verificationUserEvent);
+    void tradesManVerificationSubscriber(VerificationTradesManEvent verificationTradesManEvent);
+    void creditCardVerificationSubscriber(VerificationTradesManEvent verificationUserEvent);
 }

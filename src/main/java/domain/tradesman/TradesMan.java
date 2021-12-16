@@ -1,10 +1,8 @@
 package domain.tradesman;
 
-import domain.CreditCard;
-
 import java.util.Objects;
 
-public class TradesMan {
+public final class TradesMan {
 
     private final TradesManId tradesManId;
     private final String firstname;
@@ -14,9 +12,12 @@ public class TradesMan {
     private final String job;
     private final String skill;
     private final Double dailyTax;
+    private final Location location;
+    private final String diplomas;
 
-    private TradesMan(TradesManId tradesManId, String firstname, String lastname, String mailAddress, CreditCard creditCard,
-                      String job, String skill, Double dailyTax){
+    private TradesMan(TradesManId tradesManId, String firstname, String lastname, String mailAddress,
+                      CreditCard creditCard, String job, String skill, Double dailyTax, Location location, String diplomas){
+
         this.tradesManId = Objects.requireNonNull(tradesManId);
         this.firstname = Objects.requireNonNull(firstname);
         this.lastname = Objects.requireNonNull(lastname);
@@ -25,16 +26,15 @@ public class TradesMan {
         this.job = Objects.requireNonNull(job);
         this.skill = Objects.requireNonNull(skill);
         this.dailyTax = Objects.requireNonNull(dailyTax);
+        this.location = Objects.requireNonNull(location);
+        this.diplomas = Objects.requireNonNull(diplomas);
     }
 
     public static TradesMan of(TradesManId tradesManId, String firstname, String lastname, String mailAddress,
-                               CreditCard creditCard, String job, String skills,
-                               Double dailyTax){
-        return new TradesMan(tradesManId, firstname, lastname, mailAddress, creditCard, job, skills, dailyTax);
+                               CreditCard creditCard, String job, String skills, Double dailyTax, Location location,
+                               String diplomas){
+        return new TradesMan(tradesManId, firstname, lastname, mailAddress, creditCard, job, skills, dailyTax, location, diplomas);
     }
-
-    //TODO : générer -> getter, toString, equals, hashCode
-
 
     @Override
     public String toString() {
@@ -47,6 +47,8 @@ public class TradesMan {
                 ", job='" + job + '\'' +
                 ", skill='" + skill + '\'' +
                 ", dailyTax=" + dailyTax +
+                ", location=" + location +
+                ", diplomas=" + diplomas +
                 '}';
     }
 
@@ -58,7 +60,8 @@ public class TradesMan {
         return Objects.equals(tradesManId, tradesMan.tradesManId) && Objects.equals(firstname, tradesMan.firstname)
                 && Objects.equals(lastname, tradesMan.lastname) && Objects.equals(email, tradesMan.email)
                 && Objects.equals(creditCard, tradesMan.creditCard) && Objects.equals(job, tradesMan.job)
-                && Objects.equals(skill, tradesMan.skill) && Objects.equals(dailyTax, tradesMan.dailyTax);
+                && Objects.equals(skill, tradesMan.skill) && Objects.equals(dailyTax, tradesMan.dailyTax)
+                && Objects.equals(location, tradesMan.location) && Objects.equals(diplomas, tradesMan.diplomas) ;
     }
 
     @Override
@@ -98,4 +101,7 @@ public class TradesMan {
         return dailyTax;
     }
 
+    public Location getLocation() {
+        return location;
+    }
 }

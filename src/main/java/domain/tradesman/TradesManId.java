@@ -1,17 +1,26 @@
 package domain.tradesman;
 
 import java.util.Objects;
+import java.util.UUID;
 
 public final class TradesManId {
 
     private final String id;
 
-    private TradesManId(String id) {
+    public TradesManId(String id) {
         this.id = id;
     }
 
     public static TradesManId of(String id) {
         return new TradesManId(id);
+    }
+
+    public static TradesManId fromUUID(UUID uuid) {
+        return new TradesManId(uuid.toString());
+    }
+
+    public String getId() {
+        return id;
     }
 
     @Override
@@ -25,5 +34,12 @@ public final class TradesManId {
     @Override
     public int hashCode() {
         return Objects.hash(id);
+    }
+
+    @Override
+    public String toString() {
+        return "TradesManId{" +
+                "id='" + id + '\'' +
+                '}';
     }
 }

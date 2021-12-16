@@ -1,4 +1,4 @@
-package domain;
+package domain.tradesman;
 
 import java.util.Objects;
 
@@ -8,8 +8,8 @@ public class Location {
     private final String city;
 
     public Location(String region, String city) {
-        this.region = region;
-        this.city = city;
+        this.region = Objects.requireNonNull(region);
+        this.city = Objects.requireNonNull(city);
     }
 
     public static Location of(String region, String city){

@@ -1,5 +1,6 @@
+import domain.tradesman.Location;
 import events.AddedUserEvent;
-import domain.CreditCard;
+import domain.tradesman.CreditCard;
 import domain.tradesman.TradesMan;
 import domain.tradesman.TradesManId;
 import events.DefaultEventBus;
@@ -8,10 +9,11 @@ import module.Payment;
 import module.SendMailToUser;
 import application.AddedService;
 import application.CreditCardVerificationService;
-import application.UserVerificationService;
+import application.TradesManVerificationService;
 
 import java.util.Collections;
 import java.util.Date;
+
 
 public class Main {
 
@@ -23,14 +25,15 @@ public class Main {
 
 
         CreditCardVerificationService creditCardVerificationService = new CreditCardVerificationService(eventBus);
-        UserVerificationService userVerificationService = new UserVerificationService(eventBus);
+        TradesManVerificationService userVerificationService = new TradesManVerificationService(eventBus);
         AddedService addedService = new AddedService(eventBus);
 
 
-        CreditCard creditCard = CreditCard.of("4587290539783546", "BERVIN", new Date());
+        CreditCard creditCard = CreditCard.of("458729053978354612", "BERVIN", new Date());
+        Location location = Location.of("ile de france", "Paris");
         TradesManId tradesManId = TradesManId.of("1");
         TradesMan tradesMan = TradesMan.of(tradesManId,"Kélyan ", "BERVIN", "kelyan.bervin@gmail.com",
-                creditCard, "Macon", "maçcon", 2.3);
+                creditCard, "Macon", "maçon", 2.3, location, "Bac");
 
         creditCardVerificationService.creditCardVerification(creditCard, tradesMan);
 

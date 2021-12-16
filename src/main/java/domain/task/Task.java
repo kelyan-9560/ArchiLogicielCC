@@ -7,10 +7,9 @@ public class Task {
     private final TaskId taskId;
     private final String name;
 
-
     public Task(TaskId taskId, String name) {
         this.taskId = taskId;
-        this.name = name;
+        this.name = Objects.requireNonNull(name);
     }
 
     public static Task of(TaskId taskId, String name){
@@ -28,5 +27,13 @@ public class Task {
     @Override
     public int hashCode() {
         return Objects.hash(taskId, name);
+    }
+
+    public TaskId getTaskId() {
+        return taskId;
+    }
+
+    public String getName() {
+        return name;
     }
 }

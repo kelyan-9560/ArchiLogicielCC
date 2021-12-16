@@ -1,8 +1,7 @@
 package domain.project;
 
-import domain.Location;
+import domain.tradesman.Location;
 import domain.task.Task;
-
 import java.util.List;
 import java.util.Objects;
 
