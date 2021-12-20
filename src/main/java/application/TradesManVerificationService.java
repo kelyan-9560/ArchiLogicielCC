@@ -31,12 +31,13 @@ public class TradesManVerificationService {
         if(!matcher.matches()){
             throw TradesManException.withEmail(tradesMan.getEmail());
         }
-        eventBus.tradesManVerificationSubscriber(VerificationTradesManEvent.withUser(tradesMan));
     }
 
     public void userVerification(TradesMan tradesMan) {
         mailAddressVerification(tradesMan);
         dailyTaxVerification(tradesMan);
+
+        eventBus.tradesManVerificationSubscriber(VerificationTradesManEvent.withUser(tradesMan));
     }
 
 }
