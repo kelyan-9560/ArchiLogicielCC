@@ -1,10 +1,10 @@
 package module;
 
-import events.AddedUserEvent;
+import events.AddedTradesManEvent;
 
 import java.util.function.Consumer;
 
-public class AddedUserEventSubscription implements Consumer<AddedUserEvent> {
+public class AddedUserEventSubscription implements Consumer<AddedTradesManEvent> {
 
     private final SendMailToUser sendMailToUser;
     private final Payment payement;
@@ -16,8 +16,8 @@ public class AddedUserEventSubscription implements Consumer<AddedUserEvent> {
 
 
     @Override
-    public void accept(AddedUserEvent event) {
-        var user = event.getUser();
+    public void accept(AddedTradesManEvent event) {
+        var user = event.getTradesMan();
         sendMailToUser.sendMail(user);
         payement.payement(user);
     }

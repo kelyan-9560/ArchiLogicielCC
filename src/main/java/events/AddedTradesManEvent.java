@@ -4,19 +4,19 @@ import domain.tradesman.TradesMan;
 
 import java.util.Date;
 
-public class AddedUserEvent implements Event {
+public class AddedTradesManEvent implements Event {
     private final EventId eventId;
     private final Date eventDate;
     private final TradesMan tradesMan;
 
-    public AddedUserEvent(EventId eventId, Date eventDate, TradesMan tradesMan) {
+    public AddedTradesManEvent(EventId eventId, Date eventDate, TradesMan tradesMan) {
         this.eventId = eventId;
         this.eventDate = eventDate;
         this.tradesMan = tradesMan;
     }
 
-    public static AddedUserEvent withUser(TradesMan tradesMan){
-        return new AddedUserEvent(EventId.create(), new Date(), tradesMan);
+    public static AddedTradesManEvent withUser(TradesMan tradesMan){
+        return new AddedTradesManEvent(EventId.create(), new Date(), tradesMan);
     }
 
 
@@ -30,7 +30,7 @@ public class AddedUserEvent implements Event {
         return eventDate;
     }
 
-    public TradesMan getUser() {
+    public TradesMan getTradesMan() {
         return tradesMan;
     }
 }

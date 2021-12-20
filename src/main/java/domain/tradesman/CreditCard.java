@@ -1,6 +1,6 @@
 package domain.tradesman;
 
-import java.util.Date;
+import java.time.LocalDateTime;
 import java.util.Objects;
 
 
@@ -8,17 +8,17 @@ public class CreditCard {
 
     private final String number;
     private final String ownerName;
-    private final Date expirationDate;
+    private final LocalDateTime expirationDate;
 
 
-    public CreditCard(String number, String ownerName, Date expirationDate) {
+    public CreditCard(String number, String ownerName, LocalDateTime expirationDate) {
         this.number = Objects.requireNonNull(number);
         this.ownerName = Objects.requireNonNull(ownerName);
         this.expirationDate = Objects.requireNonNull(expirationDate);
 
     }
     
-    public static CreditCard of(String number, String ownerName, Date expirationDate){
+    public static CreditCard of(String number, String ownerName, LocalDateTime expirationDate){
         return new CreditCard(number, ownerName, expirationDate);
     }
 
@@ -43,7 +43,7 @@ public class CreditCard {
         return ownerName;
     }
 
-    public Date getExpirationDate() {
+    public LocalDateTime getExpirationDate() {
         return expirationDate;
     }
 }

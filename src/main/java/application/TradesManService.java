@@ -3,7 +3,6 @@ package application;
 import domain.tradesman.TradesMan;
 import domain.tradesman.TradesManId;
 import domain.tradesman.TradesManRepository;
-import events.AddedUserEvent;
 import events.Event;
 import events.EventBus;
 import org.springframework.beans.factory.annotation.Autowired;

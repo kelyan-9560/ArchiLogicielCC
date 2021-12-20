@@ -1,6 +1,6 @@
 package application;
 
-import events.AddedUserEvent;
+import events.AddedTradesManEvent;
 import domain.tradesman.TradesMan;
 import events.Event;
 import events.EventBus;
@@ -14,7 +14,7 @@ public class AddedService {
 
     public void register(TradesMan tradesMan) {
         System.out.println("Ajout de :  " + tradesMan);
-        eventBus.send(AddedUserEvent.withUser(tradesMan));
+        eventBus.send(AddedTradesManEvent.withUser(tradesMan));
     }
 
 }

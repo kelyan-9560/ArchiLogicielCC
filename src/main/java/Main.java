@@ -1,5 +1,5 @@
 import domain.tradesman.Location;
-import events.AddedUserEvent;
+import events.AddedTradesManEvent;
 import domain.tradesman.CreditCard;
 import domain.tradesman.TradesMan;
 import domain.tradesman.TradesManId;
@@ -11,6 +11,7 @@ import application.AddedService;
 import application.CreditCardVerificationService;
 import application.TradesManVerificationService;
 
+import java.time.LocalDateTime;
 import java.util.Collections;
 import java.util.Date;
 
@@ -18,7 +19,7 @@ import java.util.Date;
 public class Main {
 
     public static void main(String[] args) throws Exception {
-        var subscriptionMap = Collections.singletonMap(AddedUserEvent.class,
+        var subscriptionMap = Collections.singletonMap(AddedTradesManEvent.class,
                         Collections.singletonList(new AddedUserEventSubscription(new SendMailToUser(), new Payment())));
 
         var eventBus = new DefaultEventBus(subscriptionMap);
@@ -29,7 +30,7 @@ public class Main {
         AddedService addedService = new AddedService(eventBus);
 
 
-        CreditCard creditCard = CreditCard.of("458729053978354612", "BERVIN", new Date());
+        CreditCard creditCard = CreditCard.of("458729053978354612", "BERVIN", LocalDateTime.now());
         Location location = Location.of("ile de france", "Paris");
         TradesManId tradesManId = TradesManId.of("1");
         TradesMan tradesMan = TradesMan.of(tradesManId,"Kélyan ", "BERVIN", "kelyan.bervin@gmail.com",

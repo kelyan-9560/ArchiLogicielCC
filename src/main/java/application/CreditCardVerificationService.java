@@ -6,6 +6,7 @@ import domain.tradesman.TradesMan;
 import events.Event;
 import events.EventBus;
 
+import java.time.LocalDateTime;
 import java.util.Date;
 import java.util.Objects;
 
@@ -25,7 +26,7 @@ public class CreditCardVerificationService {
     }
 
     public void expirationDateIsValid(CreditCard creditCard) throws CreditCardException{
-        if(creditCard.getExpirationDate().before(new Date())){
+        if(creditCard.getExpirationDate().isBefore(LocalDateTime.now())){
             throw CreditCardException.withDate(creditCard.getExpirationDate());
         }
     }

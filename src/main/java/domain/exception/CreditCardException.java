@@ -1,5 +1,6 @@
 package domain.exception;
 
+import java.time.LocalDateTime;
 import java.util.Date;
 
 public final class CreditCardException extends RuntimeException {
@@ -15,7 +16,7 @@ public final class CreditCardException extends RuntimeException {
         return new CreditCardException(creditCardNumber + " is a bad CreditCard number", 1);
     }
 
-    public static CreditCardException withDate(Date expirationDate){
+    public static CreditCardException withDate(LocalDateTime expirationDate){
         return new CreditCardException(expirationDate + " is a bad CreditCard expiration date", 2);
     }
 
