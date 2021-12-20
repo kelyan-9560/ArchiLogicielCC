@@ -7,7 +7,6 @@ import events.Event;
 import events.EventBus;
 
 import java.time.LocalDateTime;
-import java.util.Date;
 import java.util.Objects;
 
 public class CreditCardVerificationService {
@@ -31,7 +30,7 @@ public class CreditCardVerificationService {
         }
     }
 
-    public void ownerNameIsSameAsUserName(CreditCard creditCard, TradesMan tradesMan) throws CreditCardException{
+    public void ownerNameIsSameAsUserLastname(CreditCard creditCard, TradesMan tradesMan) throws CreditCardException{
         if(!Objects.equals(creditCard.getOwnerName(), tradesMan.getLastname())){
             throw CreditCardException.withOwnerName(creditCard.getOwnerName());
         }
@@ -39,8 +38,8 @@ public class CreditCardVerificationService {
 
     public void creditCardVerification(CreditCard creditCard, TradesMan tradesMan) {
         numberIsValid(creditCard);
-        //expirationDateIsValid(creditCard);
-        ownerNameIsSameAsUserName(creditCard, tradesMan);
+        expirationDateIsValid(creditCard);
+        ownerNameIsSameAsUserLastname(creditCard, tradesMan);
     }
 
 }
