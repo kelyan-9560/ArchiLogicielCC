@@ -1,6 +1,6 @@
 package domain.exception;
 
-public enum TradesManExceptions {
+public enum TradesManExceptionTags {
     BAD_FIRSTNAME,
     BAD_LASTNAME,
     BAD_EMAIL,

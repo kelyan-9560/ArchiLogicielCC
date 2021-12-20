@@ -1,26 +1,22 @@
 package domain.exception;
 
 import java.time.LocalDateTime;
-import java.util.Date;
 
 public final class CreditCardException extends RuntimeException {
 
-    private final int errorCode;
 
-    public CreditCardException(String message, int errorCode) {
-        super(message);
-        this.errorCode = errorCode;
+    public CreditCardException(int errorCode, CreditCardsExceptionsTags creditCardsExceptionsTags, String detail) {
     }
 
     public static CreditCardException withNumber(String creditCardNumber){
-        return new CreditCardException(creditCardNumber + " is a bad CreditCard number", 1);
+        return new CreditCardException(1, CreditCardsExceptionsTags.BAD_NUMBER, creditCardNumber + " is a bad CreditCard number");
     }
 
     public static CreditCardException withDate(LocalDateTime expirationDate){
-        return new CreditCardException(expirationDate + " is a bad CreditCard expiration date", 2);
+        return new CreditCardException(2, CreditCardsExceptionsTags.BAD_DATE, expirationDate + " is a bad CreditCard expiration date");
     }
 
     public static CreditCardException withOwnerName(String ownerName){
-        return new CreditCardException(ownerName + " is a bad CreditCard owner name", 3);
+        return new CreditCardException(3, CreditCardsExceptionsTags.BAD_OWNER_NAME, ownerName + " is a bad CreditCard owner name");
     }
 }

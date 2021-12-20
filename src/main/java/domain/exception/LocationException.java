@@ -2,20 +2,14 @@ package domain.exception;
 
 public final class LocationException extends RuntimeException {
 
-    private final int errorCode;
-    private final String libelle;
-
-    public LocationException(int errorCode, String libelle) {
-        this.errorCode = errorCode;
-        this.libelle = libelle;
+    public LocationException(int errorCode, LocationExceptionTags locationExceptionTags, String detail) {
     }
-
 
     public static LocationException withRegion(String region){
-        return new LocationException(1, "");
+        return new LocationException(1, LocationExceptionTags.BAD_REGION, "Bad Region");
     }
 
-    public static LocationException withCity(String region){
-        return new LocationException(1, "");
+    public static LocationException withCity(String city){
+        return new LocationException(1, LocationExceptionTags.BAD_CITY,  "Bad city");
     }
 }
