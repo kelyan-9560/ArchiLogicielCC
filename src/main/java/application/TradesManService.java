@@ -6,10 +6,11 @@ import domain.tradesman.TradesManRepository;
 import events.AddedUserEvent;
 import events.Event;
 import events.EventBus;
-import org.springframework.context.annotation.Bean;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+
 
 @Service
 public final class TradesManService {
@@ -17,6 +18,7 @@ public final class TradesManService {
     private final TradesManRepository tradesManRepository;
     private final EventBus<Event> eventBus;
 
+    @Autowired
     public TradesManService(TradesManRepository tradesManRepository, EventBus<Event> eventBus) {
         this.tradesManRepository = tradesManRepository;
         this.eventBus = eventBus;
@@ -28,35 +30,33 @@ public final class TradesManService {
     }
 
 
-    @Bean
-    public void create(TradesManDTO tradesManDTO){
+    public TradesManId create(TradesManDTO tradesManDTO){
         final TradesManId tradesManId = tradesManRepository.nextId();
         final TradesMan tradesMan = TradesMan.of(tradesManId, tradesManDTO.firstname, tradesManDTO.lastname,
                                                     tradesManDTO.email,tradesManDTO.creditCard, tradesManDTO.job,
                                                     tradesManDTO.skill, tradesManDTO.dailyTax, tradesManDTO.location,
                                                     tradesManDTO.diplomas);
-        this.tradesManRepository.add(tradesMan);
-        this.eventBus.send(AddedUserEvent.withUser(tradesMan));
+        tradesManRepository.add(tradesMan);
+        //eventBus.send(AddedUserEvent.withUser(tradesMan));
+        return tradesManId;
     }
 
 
-    @Bean
-    public void getById(TradesManId tradesManId){
+    public TradesMan getById(TradesManId tradesManId){
         //this.eventBus.send();
-        tradesManRepository.findById(tradesManId);
-
+        return tradesManRepository.getById(tradesManId);
     }
 
-    @Bean
+
     public List<TradesMan> getAll(){
+        //this.eventBus.
         return tradesManRepository.getAll();
-        //utiliser l'eventBus
     }
 
-    @Bean
+
     public void delete(TradesManId tradesManId){
+        //eventBus
         tradesManRepository.delete(tradesManId);
-        //utiliser l'eventBus
     }
 
 }

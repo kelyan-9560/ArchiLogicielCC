@@ -18,7 +18,7 @@ public class TradesManVerificationService {
 
 
     public void dailyTaxVerification(TradesMan tradesMan) throws TradesManException{
-        if(tradesMan.getDailyTax() == 0.0){
+        if(tradesMan.getDailyTax() <= 0.0){
             throw TradesManException.withDailyTax(tradesMan.getDailyTax());
         }
     }

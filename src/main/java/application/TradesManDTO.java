@@ -2,13 +2,10 @@ package application;
 
 import domain.tradesman.CreditCard;
 import domain.tradesman.Location;
-import domain.tradesman.TradesManId;
 import org.springframework.lang.NonNull;
 
 public class TradesManDTO {
 
-    @NonNull
-    public TradesManId tradesManId;
     @NonNull
     public String firstname;
     @NonNull
@@ -27,4 +24,31 @@ public class TradesManDTO {
     public Location location;
     @NonNull
     public String diplomas;
+
+    public TradesManDTO(@NonNull String firstname, @NonNull String lastname, @NonNull String email, @NonNull CreditCard creditCard, @NonNull String job, @NonNull String skill, @NonNull Double dailyTax, @NonNull Location location, @NonNull String diplomas) {
+        this.firstname = firstname;
+        this.lastname = lastname;
+        this.email = email;
+        this.creditCard = creditCard;
+        this.job = job;
+        this.skill = skill;
+        this.dailyTax = dailyTax;
+        this.location = location;
+        this.diplomas = diplomas;
+    }
+
+    @Override
+    public String toString() {
+        return "TradesManDTO{" +
+                "firstname='" + firstname + '\'' +
+                ", lastname='" + lastname + '\'' +
+                ", email='" + email + '\'' +
+                ", creditCard=" + creditCard +
+                ", job='" + job + '\'' +
+                ", skill='" + skill + '\'' +
+                ", dailyTax=" + dailyTax +
+                ", location=" + location +
+                ", diplomas='" + diplomas + '\'' +
+                '}';
+    }
 }

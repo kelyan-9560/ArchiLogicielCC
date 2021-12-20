@@ -7,7 +7,7 @@ public interface TradesManRepository {
 
     void add(TradesMan tradesMan);
 
-    TradesMan findById(TradesManId tradesManId);
+    TradesMan getById(TradesManId tradesManId);
 
     List<TradesMan> getAll();
 

@@ -10,11 +10,11 @@ public final class ContractorException extends RuntimeException {
         this.libelle = libelle;
     }
     
-    public static TradesManException withFirstname(String firstname){
-        return new TradesManException(1, "firstname is bad");
+    public static ContractorException withFirstname(String firstname){
+        return new ContractorException(1, "firstname is bad");
     }
 
-    public static TradesManException withLastname(String lastname){
-        return new TradesManException(2, "lastname is bad");
+    public static ContractorException withLastname(String lastname){
+        return new ContractorException(2, "lastname is bad");
     }
 }
