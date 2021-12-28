@@ -2,9 +2,9 @@ package use_cases.tradesman.application;
 
 import use_cases.tradesman.domain.exception.TradesManException;
 import use_cases.tradesman.domain.TradesMan;
-import events.VerificationTradesManEvent;
-import events.Event;
-import events.EventBus;
+import use_cases.tradesman.domain.events.VerificationTradesManEvent;
+import use_cases.tradesman.domain.events.Event;
+import use_cases.tradesman.domain.events.EventBus;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 

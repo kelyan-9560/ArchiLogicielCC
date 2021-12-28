@@ -1,4 +1,4 @@
-package events;
+package use_cases.tradesman.domain.events;
 
 import java.util.List;
 import java.util.Map;

@@ -3,8 +3,8 @@ package use_cases.tradesman.application;
 import use_cases.tradesman.domain.TradesMan;
 import use_cases.tradesman.domain.TradesManId;
 import use_cases.tradesman.domain.TradesManRepository;
-import events.Event;
-import events.EventBus;
+import use_cases.tradesman.domain.events.Event;
+import use_cases.tradesman.domain.events.EventBus;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

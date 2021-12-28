@@ -1,4 +1,4 @@
-package web_REST.controllers;
+package web_REST.controllers.tradesman;
 
 import use_cases.tradesman.application.TradesManDTO;
 import use_cases.tradesman.application.TradesManService;

@@ -1,5 +1,5 @@
-import events.AddedTradesManEvent;
-import events.DefaultEventBus;
+import use_cases.tradesman.domain.events.AddedTradesManEvent;
+import use_cases.tradesman.domain.events.DefaultEventBus;
 import module.AddedUserEventSubscription;
 import module.Payment;
 import module.SendMailToUser;

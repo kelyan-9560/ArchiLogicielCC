@@ -3,8 +3,8 @@ package use_cases.tradesman.application;
 import use_cases.tradesman.domain.CreditCard;
 import use_cases.tradesman.domain.exception.CreditCardException;
 import use_cases.tradesman.domain.TradesMan;
-import events.Event;
-import events.EventBus;
+import use_cases.tradesman.domain.events.Event;
+import use_cases.tradesman.domain.events.EventBus;
 
 import java.time.LocalDateTime;
 import java.util.Objects;

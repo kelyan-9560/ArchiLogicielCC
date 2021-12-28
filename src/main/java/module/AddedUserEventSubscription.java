@@ -1,17 +1,17 @@
 package module;
 
-import events.AddedTradesManEvent;
+import use_cases.tradesman.domain.events.AddedTradesManEvent;
 
 import java.util.function.Consumer;
 
 public class AddedUserEventSubscription implements Consumer<AddedTradesManEvent> {
 
     private final SendMailToUser sendMailToUser;
-    private final Payment payement;
+    private final Payment payment;
 
     public AddedUserEventSubscription(SendMailToUser sendMailToUser, Payment payement) {
         this.sendMailToUser = sendMailToUser;
-        this.payement = payement;
+        this.payment = payement;
     }
 
 
@@ -19,7 +19,7 @@ public class AddedUserEventSubscription implements Consumer<AddedTradesManEvent>
     public void accept(AddedTradesManEvent event) {
         var user = event.getTradesMan();
         sendMailToUser.sendMail(user);
-        payement.payement(user);
+        payment.payement(user);
     }
 
 }

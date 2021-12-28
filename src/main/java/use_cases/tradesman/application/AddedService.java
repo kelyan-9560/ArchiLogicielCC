@@ -1,9 +1,9 @@
 package use_cases.tradesman.application;
 
-import events.AddedTradesManEvent;
+import use_cases.tradesman.domain.events.AddedTradesManEvent;
 import use_cases.tradesman.domain.TradesMan;
-import events.Event;
-import events.EventBus;
+import use_cases.tradesman.domain.events.Event;
+import use_cases.tradesman.domain.events.EventBus;
 
 public class AddedService {
     private final EventBus<Event> eventBus;

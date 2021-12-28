@@ -9,7 +9,7 @@ public interface ContractorRepository {
 
     void add(Contractor contractor);
 
-    TradesMan getById(ContractorId contractorId);
+    Contractor getById(ContractorId contractorId);
 
     List<Contractor> getAll();
 

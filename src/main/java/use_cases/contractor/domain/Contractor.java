@@ -18,7 +18,6 @@ public final class Contractor {
         return new Contractor(contractorId, firstname, lastname);
     }
 
-
     @Override
     public String toString() {
         return "Contractor{" +
