@@ -1,6 +1,6 @@
 package events;
 
-import domain.tradesman.TradesMan;
+import use_cases.tradesman.domain.TradesMan;
 
 import java.util.Date;
 

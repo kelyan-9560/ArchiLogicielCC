@@ -1,6 +1,6 @@
 package module;
 
-import domain.tradesman.TradesMan;
+import use_cases.tradesman.domain.TradesMan;
 
 public final class SendMailToUser {
 

@@ -1,12 +1,12 @@
-import domain.tradesman.*;
 import events.AddedTradesManEvent;
 import events.DefaultEventBus;
 import module.AddedUserEventSubscription;
 import module.Payment;
 import module.SendMailToUser;
-import application.AddedService;
-import application.CreditCardVerificationService;
-import application.TradesManVerificationService;
+import use_cases.tradesman.application.AddedService;
+import use_cases.tradesman.application.CreditCardVerificationService;
+import use_cases.tradesman.application.TradesManVerificationService;
+import use_cases.tradesman.domain.*;
 
 import java.time.LocalDateTime;
 import java.util.Collections;
