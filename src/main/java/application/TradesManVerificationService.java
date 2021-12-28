@@ -26,10 +26,13 @@ public class TradesManVerificationService {
     public void mailAddressVerification(TradesMan tradesMan) throws TradesManException {
         String regex = "^(.+)@(.+)$";
         Pattern pattern = Pattern.compile(regex);
-        Matcher matcher = pattern.matcher(tradesMan.getEmail());
+        Matcher matcher = pattern.matcher(tradesMan.getEmail().toString());
+
+
+
 
         if(!matcher.matches()){
-            throw TradesManException.withEmail(tradesMan.getEmail());
+            throw TradesManException.withEmail(tradesMan.getEmail().toString());
         }
     }
 

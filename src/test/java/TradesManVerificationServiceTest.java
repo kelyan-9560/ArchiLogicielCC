@@ -1,9 +1,6 @@
 import application.TradesManVerificationService;
 import domain.exception.TradesManException;
-import domain.tradesman.CreditCard;
-import domain.tradesman.Location;
-import domain.tradesman.TradesMan;
-import domain.tradesman.TradesManId;
+import domain.tradesman.*;
 import org.junit.jupiter.api.Test;
 
 import java.time.LocalDateTime;
@@ -20,9 +17,10 @@ public class TradesManVerificationServiceTest {
         TradesManVerificationService tradesManVerificationService = new TradesManVerificationService(null);
 
         final TradesManId tradesManId = TradesManId.of("1");
+        final Email email = new Email("kelyan.bervin@gmail.com");
         final CreditCard creditCard = new CreditCard("1234567634", "BERVIN", LocalDateTime.now());
         final Location location = new Location("Ile-de-France", "Ermont");
-        final TradesMan tradesMan = TradesMan.of(tradesManId, "Kélyan", "BERVIN", "kelyan.bervin@gmail.com",
+        final TradesMan tradesMan = TradesMan.of(tradesManId, "Kélyan", "BERVIN", email,
                 creditCard, "Dev", "Java", dailyTax, location, "Bachelor");
 
 
@@ -43,9 +41,10 @@ public class TradesManVerificationServiceTest {
         TradesManVerificationService tradesManVerificationService = new TradesManVerificationService(null);
 
         final TradesManId tradesManId = TradesManId.of("1");
+        final Email email = new Email("kelyan.bervin@gmail.com");
         final CreditCard creditCard = new CreditCard("1234567634", "BERVIN", LocalDateTime.now());
         final Location location = new Location("Ile-de-France", "Ermont");
-        final TradesMan tradesMan = TradesMan.of(tradesManId, "Kélyan", "BERVIN", "kelyan.bervin@gmail.com",
+        final TradesMan tradesMan = TradesMan.of(tradesManId, "Kélyan", "BERVIN", email,
                 creditCard, "Dev", "Java", dailyTax, location, "Bachelor");
 
 
@@ -67,9 +66,10 @@ public class TradesManVerificationServiceTest {
         TradesManVerificationService tradesManVerificationService = new TradesManVerificationService(null);
 
         final TradesManId tradesManId = TradesManId.of("1");
+        final Email email = new Email("kelyan.bervin@gmail.com");
         final CreditCard creditCard = new CreditCard("1234567634", "BERVIN", LocalDateTime.now());
         final Location location = new Location("Ile-de-France", "Ermont");
-        final TradesMan tradesMan = TradesMan.of(tradesManId, "Kélyan", "BERVIN", "kelyan.bervin@gmail.com",
+        final TradesMan tradesMan = TradesMan.of(tradesManId, "Kélyan", "BERVIN", email,
                 creditCard, "Dev", "Java", dailyTax, location, "Bachelor");
 
         try{
@@ -85,14 +85,14 @@ public class TradesManVerificationServiceTest {
     @Test
     public void mailAddressValid(){
 
-        final String mailAddress = "kelyan.bervin@gmail.com";
+        final Email email = new Email("kelyan.bervin@gmail.com");
 
         TradesManVerificationService tradesManVerificationService = new TradesManVerificationService(null);
 
         final TradesManId tradesManId = TradesManId.of("1");
         final CreditCard creditCard = new CreditCard("1234567634", "BERVIN", LocalDateTime.now());
         final Location location = new Location("Ile-de-France", "Ermont");
-        final TradesMan tradesMan = TradesMan.of(tradesManId, "Kélyan", "BERVIN", mailAddress,
+        final TradesMan tradesMan = TradesMan.of(tradesManId, "Kélyan", "BERVIN", email,
                 creditCard, "Dev", "Java", 0.1, location, "Bachelor");
 
 
@@ -108,14 +108,14 @@ public class TradesManVerificationServiceTest {
     @Test
     public void mailAddressNotValid(){
 
-        final String mailAddress = "kelyan.bervingmail.com";
+        final Email email = new Email("kelyan.bervingmail.com");
 
         TradesManVerificationService tradesManVerificationService = new TradesManVerificationService(null);
 
         final TradesManId tradesManId = TradesManId.of("1");
         final CreditCard creditCard = new CreditCard("1234567634", "BERVIN", LocalDateTime.now());
         final Location location = new Location("Ile-de-France", "Ermont");
-        final TradesMan tradesMan = TradesMan.of(tradesManId, "Kélyan", "BERVIN", mailAddress,
+        final TradesMan tradesMan = TradesMan.of(tradesManId, "Kélyan", "BERVIN", email,
                 creditCard, "Dev", "Java", 0.0, location, "Bachelor");
 
         try{

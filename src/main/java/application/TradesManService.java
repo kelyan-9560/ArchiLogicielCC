@@ -12,7 +12,7 @@ import java.util.List;
 
 
 @Service
-public final class TradesManService {
+public class TradesManService {
 
     private final TradesManRepository tradesManRepository;
     private final EventBus<Event> eventBus;

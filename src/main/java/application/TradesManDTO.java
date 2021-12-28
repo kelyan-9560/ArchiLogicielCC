@@ -1,17 +1,18 @@
 package application;
 
 import domain.tradesman.CreditCard;
+import domain.tradesman.Email;
 import domain.tradesman.Location;
 import org.springframework.lang.NonNull;
 
-public class TradesManDTO {
+public final class TradesManDTO {
 
     @NonNull
     public String firstname;
     @NonNull
     public String lastname;
     @NonNull
-    public String email;
+    public Email email;
     @NonNull
     public CreditCard creditCard;
     @NonNull
@@ -25,7 +26,8 @@ public class TradesManDTO {
     @NonNull
     public String diplomas;
 
-    public TradesManDTO(@NonNull String firstname, @NonNull String lastname, @NonNull String email, @NonNull CreditCard creditCard, @NonNull String job, @NonNull String skill, @NonNull Double dailyTax, @NonNull Location location, @NonNull String diplomas) {
+    public TradesManDTO(@NonNull String firstname, @NonNull String lastname, @NonNull Email email, @NonNull CreditCard creditCard,
+                        @NonNull String job, @NonNull String skill, @NonNull Double dailyTax, @NonNull Location location, @NonNull String diplomas) {
         this.firstname = firstname;
         this.lastname = lastname;
         this.email = email;

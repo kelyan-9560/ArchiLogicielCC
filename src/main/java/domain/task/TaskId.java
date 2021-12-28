@@ -2,7 +2,7 @@ package domain.task;
 
 import java.util.Objects;
 
-public class TaskId {
+public final class TaskId {
 
     private final String id;
 

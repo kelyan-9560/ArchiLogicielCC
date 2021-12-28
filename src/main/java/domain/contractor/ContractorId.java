@@ -2,7 +2,7 @@ package domain.contractor;
 
 import java.util.Objects;
 
-public class ContractorId {
+public final class ContractorId {
 
     private final String id;
 

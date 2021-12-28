@@ -1,9 +1,6 @@
 import application.CreditCardVerificationService;
 import domain.exception.CreditCardException;
-import domain.tradesman.CreditCard;
-import domain.tradesman.Location;
-import domain.tradesman.TradesMan;
-import domain.tradesman.TradesManId;
+import domain.tradesman.*;
 import org.junit.jupiter.api.Test;
 
 import java.time.LocalDateTime;
@@ -89,9 +86,10 @@ public class CreditCardVerificationServiceTest {
         final String tradesManLastname = "MESSI";
 
         final TradesManId tradesManId = TradesManId.of("1");
+        final Email email = new Email("kelyan.bervin@gmail.com");
         final CreditCard creditCard = new CreditCard("123456789009876543", creditCardOwnerName, LocalDateTime.now());
         final Location location = new Location("Ile-de-France", "Ermont");
-        final TradesMan tradesMan = TradesMan.of(tradesManId, "Kélyan", tradesManLastname, "kelyan.bervin@gmail.com",
+        final TradesMan tradesMan = TradesMan.of(tradesManId, "Kélyan", tradesManLastname, email,
                 creditCard, "Dev", "Java", 0.1, location, "Bachelor");
 
 
@@ -113,9 +111,10 @@ public class CreditCardVerificationServiceTest {
         final String tradesManLastname = "RONALDO";
 
         final TradesManId tradesManId = TradesManId.of("1");
+        final Email email = new Email("kelyan.bervin@gmail.com");
         final CreditCard creditCard = new CreditCard("123456789009876543", creditCardOwnerName, LocalDateTime.now());
         final Location location = new Location("Ile-de-France", "Ermont");
-        final TradesMan tradesMan = TradesMan.of(tradesManId, "Kélyan", tradesManLastname, "kelyan.bervin@gmail.com",
+        final TradesMan tradesMan = TradesMan.of(tradesManId, "Kélyan", tradesManLastname, email,
                 creditCard, "Dev", "Java", 0.1, location, "Bachelor");
 
 

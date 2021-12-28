@@ -5,7 +5,7 @@ import domain.task.Task;
 import java.util.List;
 import java.util.Objects;
 
-public class Project {
+public final class Project {
 
     private final List<String> jobs;
     private final List<String> skills;

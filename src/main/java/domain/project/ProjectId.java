@@ -2,7 +2,7 @@ package domain.project;
 
 import java.util.Objects;
 
-public class ProjectId {
+public final class ProjectId {
 
     private final String id;
 

@@ -4,7 +4,7 @@ import java.time.LocalDateTime;
 import java.util.Objects;
 
 
-public class CreditCard {
+public final class CreditCard {
 
     private final String number;
     private final String ownerName;

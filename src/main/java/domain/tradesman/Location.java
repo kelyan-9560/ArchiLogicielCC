@@ -2,7 +2,7 @@ package domain.tradesman;
 
 import java.util.Objects;
 
-public class Location {
+public final class Location {
 
     private final String region;
     private final String city;
