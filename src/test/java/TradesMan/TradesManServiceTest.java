@@ -1,10 +1,10 @@
 package TradesMan;
 
-import use_cases.tradesman.application.TradesManDTO;
-import use_cases.tradesman.application.TradesManService;
-import use_cases.tradesman.domain.exception.TradesManException;
-import use_cases.tradesman.domain.*;
-import use_cases.tradesman.infrastructure.InMemoryTradesManRepository;
+import cc2.use_cases.tradesman.application.TradesManDTO;
+import cc2.use_cases.tradesman.application.TradesManService;
+import cc2.use_cases.tradesman.domain.*;
+import cc2.use_cases.tradesman.domain.exception.TradesManException;
+import cc2.use_cases.tradesman.infrastructure.InMemoryTradesManRepository;
 import org.junit.jupiter.api.Test;
 
 import java.time.LocalDateTime;

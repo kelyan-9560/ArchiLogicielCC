@@ -1,13 +1,13 @@
 package Contractor;
 
 import org.junit.jupiter.api.Test;
-import use_cases.contractor.application.ContractorDTO;
-import use_cases.contractor.application.ContractorService;
-import use_cases.contractor.domain.Contractor;
-import use_cases.contractor.domain.ContractorId;
-import use_cases.contractor.domain.ContractorRepository;
-import use_cases.contractor.domain.exception.ContractorException;
-import use_cases.contractor.infrastructure.InMemoryContractorRepository;
+import cc2.use_cases.contractor.application.ContractorDTO;
+import cc2.use_cases.contractor.application.ContractorService;
+import cc2.use_cases.contractor.domain.Contractor;
+import cc2.use_cases.contractor.domain.ContractorId;
+import cc2.use_cases.contractor.domain.ContractorRepository;
+import cc2.use_cases.contractor.domain.exception.ContractorException;
+import cc2.use_cases.contractor.infrastructure.InMemoryContractorRepository;
 
 import java.util.ArrayList;
 import java.util.List;

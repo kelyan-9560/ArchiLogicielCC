@@ -1,9 +1,9 @@
 package TradesMan;
 
-import use_cases.tradesman.domain.exception.TradesManException;
+import cc2.use_cases.tradesman.domain.*;
+import cc2.use_cases.tradesman.domain.exception.TradesManException;
 import org.junit.jupiter.api.Test;
-import use_cases.tradesman.application.TradesManVerificationService;
-import use_cases.tradesman.domain.*;
+import cc2.use_cases.tradesman.application.TradesManVerificationService;
 
 import java.time.LocalDateTime;
 

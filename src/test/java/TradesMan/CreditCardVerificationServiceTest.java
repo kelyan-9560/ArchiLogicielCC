@@ -1,9 +1,9 @@
 package TradesMan;
 
-import use_cases.tradesman.application.CreditCardVerificationService;
-import use_cases.tradesman.domain.exception.CreditCardException;
+import cc2.use_cases.tradesman.application.CreditCardVerificationService;
+import cc2.use_cases.tradesman.domain.*;
+import cc2.use_cases.tradesman.domain.exception.CreditCardException;
 import org.junit.jupiter.api.Test;
-import use_cases.tradesman.domain.*;
 
 import java.time.LocalDateTime;
 
