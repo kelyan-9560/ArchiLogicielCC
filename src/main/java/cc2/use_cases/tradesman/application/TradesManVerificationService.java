@@ -28,9 +28,6 @@ public class TradesManVerificationService {
         Pattern pattern = Pattern.compile(regex);
         Matcher matcher = pattern.matcher(tradesMan.getEmail().toString());
 
-
-
-
         if(!matcher.matches()){
             throw TradesManException.withEmail(tradesMan.getEmail().toString());
         }

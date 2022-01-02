@@ -1,26 +1,39 @@
 package TradesMan;
 
+import cc2.module.AddedUserEventSubscription;
+import cc2.module.Payment;
+import cc2.module.SendMailToUser;
 import cc2.use_cases.tradesman.application.TradesManDTO;
 import cc2.use_cases.tradesman.application.TradesManService;
 import cc2.use_cases.tradesman.domain.*;
+import cc2.use_cases.tradesman.domain.events.AddedTradesManEvent;
+import cc2.use_cases.tradesman.domain.events.DefaultEventBus;
 import cc2.use_cases.tradesman.domain.exception.TradesManException;
 import cc2.use_cases.tradesman.infrastructure.InMemoryTradesManRepository;
 import org.junit.jupiter.api.Test;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
+import java.util.Map;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 
 public class TradesManServiceTest {
 
+    Map<Class<AddedTradesManEvent>, List<AddedUserEventSubscription>> subscriptionMap = Collections.singletonMap(AddedTradesManEvent.class,
+            Collections.singletonList(new AddedUserEventSubscription(new SendMailToUser(), new Payment())));
+
+    DefaultEventBus eventBus = new DefaultEventBus(subscriptionMap);
+
     @Test
     void createUser(){
 
         TradesManRepository tradesManRepository = new InMemoryTradesManRepository();
-        TradesManService tradesManService = new TradesManService(tradesManRepository, null);
+
+        TradesManService tradesManService = new TradesManService(tradesManRepository, eventBus);
 
         final Email email = new Email("kelyan.bervin@gmail.com");
         final CreditCard creditCard = new CreditCard("1234567634", "BERVIN", LocalDateTime.now());
@@ -46,7 +59,8 @@ public class TradesManServiceTest {
     void getUserById(){
 
         TradesManRepository inMemoryTradesManRepository = new InMemoryTradesManRepository();
-        TradesManService tradesManService = new TradesManService(inMemoryTradesManRepository, null);
+
+        TradesManService tradesManService = new TradesManService(inMemoryTradesManRepository, eventBus);
 
         final Email email = new Email("kelyan.bervin@gmail.com");
         final TradesManId tradesManId = tradesManService.nextId();
@@ -65,7 +79,7 @@ public class TradesManServiceTest {
     @Test
     void getAllUsers(){
         TradesManRepository inMemoryTradesManRepository = new InMemoryTradesManRepository();
-        TradesManService tradesManService = new TradesManService(inMemoryTradesManRepository, null);
+        TradesManService tradesManService = new TradesManService(inMemoryTradesManRepository, eventBus);
 
         //TradesMan1
         final TradesManId tradesManId1 = new TradesManId("1");
@@ -96,7 +110,7 @@ public class TradesManServiceTest {
     @Test
     void deleteUser(){
         TradesManRepository inMemoryTradesManRepository = new InMemoryTradesManRepository();
-        TradesManService tradesManService = new TradesManService(inMemoryTradesManRepository, null);
+        TradesManService tradesManService = new TradesManService(inMemoryTradesManRepository, eventBus);
 
         final TradesManId tradesManId = tradesManService.nextId();
         final Email email = new Email("kelyan.bervin@gmail.com");

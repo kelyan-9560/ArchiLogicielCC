@@ -42,10 +42,5 @@ public class Main {
 
         addedService.register(tradesMan);
 
-        //paiement
-
-
-
-
     }
 }

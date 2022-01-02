@@ -43,19 +43,16 @@ public class TradesManService {
 
 
     public TradesMan getById(TradesManId tradesManId){
-        //this.eventBus.send();
         return tradesManRepository.getById(tradesManId);
     }
 
 
     public List<TradesMan> getAll(){
-        //this.eventBus.
         return tradesManRepository.getAll();
     }
 
 
     public void delete(TradesManId tradesManId){
-        //eventBus
         tradesManRepository.delete(tradesManId);
     }
 

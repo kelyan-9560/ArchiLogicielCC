@@ -8,5 +8,5 @@ public interface EventBus<E extends Event> {
     void registerSubscriber(Class<E> classE, List<Subscriber<E>> subscribers);
 
     void tradesManVerificationSubscriber(VerificationTradesManEvent verificationTradesManEvent);
-    void creditCardVerificationSubscriber(VerificationTradesManEvent verificationUserEvent);
+    void creditCardVerificationSubscriber(VerificationCreditCardEvent verificationCreditCardEvent);
 }

@@ -1,5 +1,6 @@
 package cc2.use_cases.tradesman.application;
 
+import cc2.use_cases.tradesman.domain.events.VerificationCreditCardEvent;
 import cc2.use_cases.tradesman.domain.exception.CreditCardException;
 import cc2.use_cases.tradesman.domain.CreditCard;
 import cc2.use_cases.tradesman.domain.TradesMan;
@@ -40,6 +41,8 @@ public class CreditCardVerificationService {
         numberIsValid(creditCard);
         expirationDateIsValid(creditCard);
         ownerNameIsSameAsUserLastname(creditCard, tradesMan);
+
+        eventBus.creditCardVerificationSubscriber(VerificationCreditCardEvent.withData(tradesMan, creditCard));
     }
 
 }

@@ -1,17 +1,17 @@
 package cc2.module;
 
 import cc2.use_cases.tradesman.domain.events.AddedTradesManEvent;
+import cc2.use_cases.tradesman.domain.events.Subscriber;
 
-import java.util.function.Consumer;
 
-public class AddedUserEventSubscription implements Consumer<AddedTradesManEvent> {
+public class AddedUserEventSubscription implements Subscriber<AddedTradesManEvent> {
 
     private final SendMailToUser sendMailToUser;
     private final Payment payment;
 
-    public AddedUserEventSubscription(SendMailToUser sendMailToUser, Payment payement) {
+    public AddedUserEventSubscription(SendMailToUser sendMailToUser, Payment payment) {
         this.sendMailToUser = sendMailToUser;
-        this.payment = payement;
+        this.payment = payment;
     }
 
 
@@ -19,7 +19,7 @@ public class AddedUserEventSubscription implements Consumer<AddedTradesManEvent>
     public void accept(AddedTradesManEvent event) {
         var user = event.getTradesMan();
         sendMailToUser.sendMail(user);
-        payment.payement(user);
+        payment.payment(user);
     }
 
 }

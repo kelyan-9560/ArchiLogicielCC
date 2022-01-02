@@ -35,7 +35,7 @@ public class DefaultEventBus<E extends Event> implements EventBus<E> {
     }
 
     @Override
-    public void creditCardVerificationSubscriber(VerificationTradesManEvent verificationUserEvent) {
+    public void creditCardVerificationSubscriber(VerificationCreditCardEvent verificationCreditCardEvent) {
 
     }
 }
