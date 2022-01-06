@@ -34,14 +34,18 @@ public final class TradesManException extends RuntimeException {
     }
 
     public static TradesManException tradesManNotFound(){
-        return new TradesManException(8, TradesManExceptionTags.NOT_FOUND, "Trades Man not found");
+        return new TradesManException(9, TradesManExceptionTags.NOT_FOUND, "Trades Man not found");
     }
 
     public static TradesManException failedInsertion(){
-        return new TradesManException(8, TradesManExceptionTags.FAILED_INSERTION, "Error in inserting trades man");
+        return new TradesManException(10, TradesManExceptionTags.FAILED_INSERTION, "Error in inserting trades man");
+    }
+
+    public static TradesManException failedDeletion(){
+        return new TradesManException(11, TradesManExceptionTags.FAILED_DELETION, "Error in deletion trades man");
     }
 
     public static TradesManException noTradesMan(){
-        return new TradesManException(8, TradesManExceptionTags.NO_TRADES_MAN, "There is no trades man");
+        return new TradesManException(12, TradesManExceptionTags.NO_TRADES_MAN, "There is no trades man");
     }
 }

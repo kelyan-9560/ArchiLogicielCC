@@ -15,14 +15,18 @@ public final class ContractorException extends RuntimeException {
     }
 
     public static ContractorException contractorNotFound(){
-        return new ContractorException(8, ContractorExceptionTags.NOT_FOUND, "Contractor not found");
+        return new ContractorException(2, ContractorExceptionTags.NOT_FOUND, "Contractor not found");
     }
 
     public static ContractorException failedInsertion(){
-        return new ContractorException(8, ContractorExceptionTags.FAILED_INSERTION, "Error in inserting contractor");
+        return new ContractorException(3, ContractorExceptionTags.FAILED_INSERTION, "Error in inserting contractor");
+    }
+
+    public static ContractorException failedDeletion(){
+        return new ContractorException(4, ContractorExceptionTags.FAILED_DELETION, "Error in deleting contractor");
     }
 
     public static ContractorException noContractor(){
-        return new ContractorException(8, ContractorExceptionTags.NO_CONTRACTOR, "There is no contractor");
+        return new ContractorException(5, ContractorExceptionTags.NO_CONTRACTOR, "There is no contractor");
     }
 }

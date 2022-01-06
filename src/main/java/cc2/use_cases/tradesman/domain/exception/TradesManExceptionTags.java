@@ -10,5 +10,6 @@ public enum TradesManExceptionTags {
     BAD_DIPLOMA,
     NOT_FOUND,
     FAILED_INSERTION,
+    FAILED_DELETION,
     NO_TRADES_MAN
 }

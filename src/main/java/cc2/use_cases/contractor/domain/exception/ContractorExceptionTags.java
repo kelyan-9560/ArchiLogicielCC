@@ -5,5 +5,6 @@ public enum ContractorExceptionTags {
     BAD_LASTNAME,
     NOT_FOUND,
     FAILED_INSERTION,
+    FAILED_DELETION,
     NO_CONTRACTOR
 }

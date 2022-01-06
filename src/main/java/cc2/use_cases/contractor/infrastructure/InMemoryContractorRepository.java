@@ -49,7 +49,7 @@ public class InMemoryContractorRepository implements ContractorRepository {
         try {
             data.remove(contractorId);
         } catch (Exception e) {
-            throw ContractorException.failedInsertion();
+            throw ContractorException.failedDeletion();
         }
     }
 }

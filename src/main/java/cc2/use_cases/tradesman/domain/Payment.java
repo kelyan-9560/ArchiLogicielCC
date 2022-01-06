@@ -1,4 +1,4 @@
-package cc2.module;
+package cc2.use_cases.tradesman.domain;
 
 import cc2.use_cases.tradesman.domain.TradesMan;
 

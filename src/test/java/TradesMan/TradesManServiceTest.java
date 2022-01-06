@@ -1,8 +1,8 @@
 package TradesMan;
 
-import cc2.module.AddedUserEventSubscription;
-import cc2.module.Payment;
-import cc2.module.SendMailToUser;
+import cc2.use_cases.tradesman.domain.events.AddedUserEventSubscription;
+import cc2.use_cases.tradesman.domain.Payment;
+import cc2.use_cases.tradesman.domain.SendMailToUser;
 import cc2.use_cases.tradesman.application.TradesManDTO;
 import cc2.use_cases.tradesman.application.TradesManService;
 import cc2.use_cases.tradesman.domain.*;

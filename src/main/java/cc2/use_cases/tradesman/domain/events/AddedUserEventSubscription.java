@@ -1,7 +1,7 @@
-package cc2.module;
+package cc2.use_cases.tradesman.domain.events;
 
-import cc2.use_cases.tradesman.domain.events.AddedTradesManEvent;
-import cc2.use_cases.tradesman.domain.events.Subscriber;
+import cc2.use_cases.tradesman.domain.Payment;
+import cc2.use_cases.tradesman.domain.SendMailToUser;
 
 
 public class AddedUserEventSubscription implements Subscriber<AddedTradesManEvent> {

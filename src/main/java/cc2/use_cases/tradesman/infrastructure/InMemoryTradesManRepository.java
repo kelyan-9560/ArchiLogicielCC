@@ -45,7 +45,7 @@ public class InMemoryTradesManRepository implements TradesManRepository {
         try {
             data.remove(tradesManId);
         } catch (Exception e) {
-            throw TradesManException.failedInsertion();
+            throw TradesManException.failedDeletion();
         }
     }
 }
