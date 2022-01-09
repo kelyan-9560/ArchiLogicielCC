@@ -62,10 +62,10 @@ public class TradesManServiceTest {
 
         TradesManService tradesManService = new TradesManService(inMemoryTradesManRepository, eventBus);
 
-        final Email email = new Email("kelyan.bervin@gmail.com");
+        final Email email = Email.of("kelyan.bervin@gmail.com");
         final TradesManId tradesManId = tradesManService.nextId();
-        final CreditCard creditCard = new CreditCard("1234567634", "BERVIN", LocalDateTime.now());
-        final Location location = new Location("Ile-de-France", "Ermont");
+        final CreditCard creditCard = CreditCard.of("1234567634", "BERVIN", LocalDateTime.now());
+        final Location location = Location.of("Ile-de-France", "Ermont");
 
         final TradesMan tradesMan = TradesMan.of(tradesManId,"Kélyan", "BERVIN", email,
                 creditCard, "Dev", "Java", 0.5, location, "Bachelor");
@@ -83,17 +83,17 @@ public class TradesManServiceTest {
 
         //TradesMan1
         final TradesManId tradesManId1 = new TradesManId("1");
-        final Email email = new Email("kelyan.bervin@gmail.com");
-        final CreditCard creditCard1 = new CreditCard("1234567634", "BERVIN1", LocalDateTime.now());
-        final Location location1 = new Location("Ile-de-France", "Ermont1");
+        final Email email = Email.of("kelyan.bervin@gmail.com");
+        final CreditCard creditCard1 = CreditCard.of("1234567634", "BERVIN1", LocalDateTime.now());
+        final Location location1 = Location.of("Ile-de-France", "Ermont1");
         final TradesMan tradesMan1 = TradesMan.of(tradesManId1, "Kélyan1", "BERVIN1", email,
                 creditCard1, "Dev1", "Java1", 0.5, location1, "Bachelor1");
 
         //TradesMan2
         final TradesManId tradesManId2 = new TradesManId("2");
-        final Email email2 = new Email("kelyan.bervin2@gmail.com");
-        final CreditCard creditCard2 = new CreditCard("1234567634", "BERVIN2", LocalDateTime.now());
-        final Location location2 = new Location("Ile-de-France", "Ermon2");
+        final Email email2 = Email.of("kelyan.bervin2@gmail.com");
+        final CreditCard creditCard2 = CreditCard.of("1234567634", "BERVIN2", LocalDateTime.now());
+        final Location location2 = Location.of("Ile-de-France", "Ermon2");
         final TradesMan tradesMan2 = TradesMan.of(tradesManId2,"Kélyan2", "BERVIN2", email2,
                 creditCard2, "Dev2", "Java2", 12.0, location2, "Bachelor2");
 
@@ -113,9 +113,9 @@ public class TradesManServiceTest {
         TradesManService tradesManService = new TradesManService(inMemoryTradesManRepository, eventBus);
 
         final TradesManId tradesManId = tradesManService.nextId();
-        final Email email = new Email("kelyan.bervin@gmail.com");
-        final CreditCard creditCard = new CreditCard("1234567634", "BERVIN", LocalDateTime.now());
-        final Location location = new Location("Ile-de-France", "Ermont");
+        final Email email = Email.of("kelyan.bervin@gmail.com");
+        final CreditCard creditCard = CreditCard.of("1234567634", "BERVIN", LocalDateTime.now());
+        final Location location = Location.of("Ile-de-France", "Ermont");
 
         final TradesMan tradesMan = TradesMan.of(tradesManId,"Kélyan", "BERVIN", email,
                 creditCard, "Dev", "Java", 0.5, location, "Bachelor");

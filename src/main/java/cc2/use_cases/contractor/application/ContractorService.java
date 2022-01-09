@@ -32,24 +32,20 @@ public class ContractorService {
         final Contractor contractor = Contractor.of(contractorId, contractorDTO.firstname, contractorDTO.lastname);
 
         contractorRepository.add(contractor);
-        //eventBus.send(AddedUserEvent.withUser(tradesMan));
         return contractorId;
     }
 
     public Contractor getById(ContractorId contractorId){
-        //this.eventBus.send();
         return contractorRepository.getById(contractorId);
     }
 
 
     public List<Contractor> getAll(){
-        //this.eventBus.
         return contractorRepository.getAll();
     }
 
 
     public void delete(ContractorId contractorId){
-        //eventBus
         contractorRepository.delete(contractorId);
     }
 }

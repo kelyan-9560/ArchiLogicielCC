@@ -17,7 +17,7 @@ public class CreditCardVerificationServiceTest {
         final String creditCardNumber = "123456789009876543";
 
         CreditCardVerificationService creditCardVerificationService = new CreditCardVerificationService(null);
-        CreditCard creditCard = new CreditCard(creditCardNumber, "Jean", LocalDateTime.now());
+        CreditCard creditCard = CreditCard.of(creditCardNumber, "Jean", LocalDateTime.now());
 
         try{
             creditCardVerificationService.numberIsValid(creditCard);
@@ -34,7 +34,7 @@ public class CreditCardVerificationServiceTest {
         final String creditCardNumber = "1234567890";
 
         CreditCardVerificationService creditCardVerificationService = new CreditCardVerificationService(null);
-        CreditCard creditCard = new CreditCard(creditCardNumber, "Jean", LocalDateTime.now());
+        CreditCard creditCard = CreditCard.of(creditCardNumber, "Jean", LocalDateTime.now());
 
         try{
             creditCardVerificationService.numberIsValid(creditCard);
@@ -51,7 +51,7 @@ public class CreditCardVerificationServiceTest {
         final LocalDateTime creditCardExpirationDate = LocalDateTime.now();
 
         CreditCardVerificationService creditCardVerificationService = new CreditCardVerificationService(null);
-        CreditCard creditCard = new CreditCard("123456789009876543", "Jean", creditCardExpirationDate);
+        CreditCard creditCard = CreditCard.of("123456789009876543", "Jean", creditCardExpirationDate);
 
         try{
             creditCardVerificationService.expirationDateIsValid(creditCard);
@@ -68,7 +68,7 @@ public class CreditCardVerificationServiceTest {
 
         final LocalDateTime creditCardExpirationDate = LocalDateTime.of(2010, 12, 15,0,0,0);
 
-        CreditCard creditCard = new CreditCard("123456789009876543", "Jean", creditCardExpirationDate);
+        CreditCard creditCard = CreditCard.of("123456789009876543", "Jean", creditCardExpirationDate);
 
         try{
             creditCardVerificationService.expirationDateIsValid(creditCard);
@@ -88,9 +88,9 @@ public class CreditCardVerificationServiceTest {
         final String tradesManLastname = "MESSI";
 
         final TradesManId tradesManId = TradesManId.of("1");
-        final Email email = new Email("kelyan.bervin@gmail.com");
-        final CreditCard creditCard = new CreditCard("123456789009876543", creditCardOwnerName, LocalDateTime.now());
-        final Location location = new Location("Ile-de-France", "Ermont");
+        final Email email = Email.of("kelyan.bervin@gmail.com");
+        final CreditCard creditCard = CreditCard.of("123456789009876543", creditCardOwnerName, LocalDateTime.now());
+        final Location location = Location.of("Ile-de-France", "Ermont");
         final TradesMan tradesMan = TradesMan.of(tradesManId, "Kélyan", tradesManLastname, email,
                 creditCard, "Dev", "Java", 0.1, location, "Bachelor");
 
@@ -113,9 +113,9 @@ public class CreditCardVerificationServiceTest {
         final String tradesManLastname = "RONALDO";
 
         final TradesManId tradesManId = TradesManId.of("1");
-        final Email email = new Email("kelyan.bervin@gmail.com");
-        final CreditCard creditCard = new CreditCard("123456789009876543", creditCardOwnerName, LocalDateTime.now());
-        final Location location = new Location("Ile-de-France", "Ermont");
+        final Email email = Email.of("kelyan.bervin@gmail.com");
+        final CreditCard creditCard = CreditCard.of("123456789009876543", creditCardOwnerName, LocalDateTime.now());
+        final Location location = Location.of("Ile-de-France", "Ermont");
         final TradesMan tradesMan = TradesMan.of(tradesManId, "Kélyan", tradesManLastname, email,
                 creditCard, "Dev", "Java", 0.1, location, "Bachelor");
 

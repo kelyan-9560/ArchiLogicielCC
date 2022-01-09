@@ -19,9 +19,9 @@ public class TradesManVerificationServiceTest {
         TradesManVerificationService tradesManVerificationService = new TradesManVerificationService(null);
 
         final TradesManId tradesManId = TradesManId.of("1");
-        final Email email = new Email("kelyan.bervin@gmail.com");
-        final CreditCard creditCard = new CreditCard("1234567634", "BERVIN", LocalDateTime.now());
-        final Location location = new Location("Ile-de-France", "Ermont");
+        final Email email = Email.of("kelyan.bervin@gmail.com");
+        final CreditCard creditCard = CreditCard.of("1234567634", "BERVIN", LocalDateTime.now());
+        final Location location = Location.of("Ile-de-France", "Ermont");
         final TradesMan tradesMan = TradesMan.of(tradesManId, "Kélyan", "BERVIN", email,
                 creditCard, "Dev", "Java", dailyTax, location, "Bachelor");
 
@@ -43,9 +43,9 @@ public class TradesManVerificationServiceTest {
         TradesManVerificationService tradesManVerificationService = new TradesManVerificationService(null);
 
         final TradesManId tradesManId = TradesManId.of("1");
-        final Email email = new Email("kelyan.bervin@gmail.com");
-        final CreditCard creditCard = new CreditCard("1234567634", "BERVIN", LocalDateTime.now());
-        final Location location = new Location("Ile-de-France", "Ermont");
+        final Email email = Email.of("kelyan.bervin@gmail.com");
+        final CreditCard creditCard = CreditCard.of("1234567634", "BERVIN", LocalDateTime.now());
+        final Location location = Location.of("Ile-de-France", "Ermont");
         final TradesMan tradesMan = TradesMan.of(tradesManId, "Kélyan", "BERVIN", email,
                 creditCard, "Dev", "Java", dailyTax, location, "Bachelor");
 
@@ -68,9 +68,9 @@ public class TradesManVerificationServiceTest {
         TradesManVerificationService tradesManVerificationService = new TradesManVerificationService(null);
 
         final TradesManId tradesManId = TradesManId.of("1");
-        final Email email = new Email("kelyan.bervin@gmail.com");
-        final CreditCard creditCard = new CreditCard("1234567634", "BERVIN", LocalDateTime.now());
-        final Location location = new Location("Ile-de-France", "Ermont");
+        final Email email = Email.of("kelyan.bervin@gmail.com");
+        final CreditCard creditCard = CreditCard.of("1234567634", "BERVIN", LocalDateTime.now());
+        final Location location = Location.of("Ile-de-France", "Ermont");
         final TradesMan tradesMan = TradesMan.of(tradesManId, "Kélyan", "BERVIN", email,
                 creditCard, "Dev", "Java", dailyTax, location, "Bachelor");
 
@@ -92,8 +92,8 @@ public class TradesManVerificationServiceTest {
         TradesManVerificationService tradesManVerificationService = new TradesManVerificationService(null);
 
         final TradesManId tradesManId = TradesManId.of("1");
-        final CreditCard creditCard = new CreditCard("1234567634", "BERVIN", LocalDateTime.now());
-        final Location location = new Location("Ile-de-France", "Ermont");
+        final CreditCard creditCard = CreditCard.of("1234567634", "BERVIN", LocalDateTime.now());
+        final Location location = Location.of("Ile-de-France", "Ermont");
         final TradesMan tradesMan = TradesMan.of(tradesManId, "Kélyan", "BERVIN", email,
                 creditCard, "Dev", "Java", 0.1, location, "Bachelor");
 
@@ -115,8 +115,8 @@ public class TradesManVerificationServiceTest {
         TradesManVerificationService tradesManVerificationService = new TradesManVerificationService(null);
 
         final TradesManId tradesManId = TradesManId.of("1");
-        final CreditCard creditCard = new CreditCard("1234567634", "BERVIN", LocalDateTime.now());
-        final Location location = new Location("Ile-de-France", "Ermont");
+        final CreditCard creditCard = CreditCard.of("1234567634", "BERVIN", LocalDateTime.now());
+        final Location location = Location.of("Ile-de-France", "Ermont");
         final TradesMan tradesMan = TradesMan.of(tradesManId, "Kélyan", "BERVIN", email,
                 creditCard, "Dev", "Java", 0.0, location, "Bachelor");
 

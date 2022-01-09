@@ -1,6 +1,8 @@
 package cc2.use_cases.project.domain;
 
+
 import java.util.Objects;
+import java.util.UUID;
 
 public final class ProjectId {
 
@@ -13,6 +15,11 @@ public final class ProjectId {
     public static ProjectId of(String id) {
         return new ProjectId(id);
     }
+
+    public static ProjectId fromUUID(UUID uuid) {
+        return new ProjectId(uuid.toString());
+    }
+
 
     @Override
     public boolean equals(Object o) {
