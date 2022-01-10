@@ -2,7 +2,7 @@ name: Build
 on:
   push:
     branches:
-      - CC2 # or the name of your main branch
+      - cc2 # or the name of your main branch
 
 jobs:
   build:
